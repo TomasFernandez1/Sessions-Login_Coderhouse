@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOMMERCE</title>
+</head>
+<body>
+    <nav>
+        {{#if req.session.username}}
+        <p>Bienvenido {{req.session.username}} - ROLE: {{req.session.role}}</p>
+        <form action="/api/sessions/logout" method="post">
+        <button type="submit">LOGOUT</button>
+        </form>
+        </nav>
+        {{/if}}
+    {{{body}}}
+</body>
+</html>
